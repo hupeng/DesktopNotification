@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Desktop Notifications</title>
+	<script type="text/javascript" src="../JS/desktopNotification.js"></script>
+	<style type="text/css">
+		body{
+			background-color: #7a7a7a;
+			font-family: "Lucida Console", "Verdana", "Arial", "Bitstream Vera Sans", "sans-serif";
+			font-size: 16px;
+		}
+
+		.main{
+			width: 500px;
+			margin: 0 auto;
+		}
+
+		.message{
+			width: 400px;
+			margin: 10px auto;
+		}
+
+		.main .button{
+			width: 150px;
+			height: 30px;
+			margin: 0 auto;
+			padding-top: 10px;
+			text-align: center;
+			background-color: rgb(158,92,139);
+			-webkit-box-shadow:0 0 10px rgba(153,139,149,0.8) inset;
+			-webkit-border-radius: 10px;
+		}
+
+		.main .button:hover{
+			cursor: pointer;
+			background-color: rgb(232,46, 179);
+		}
+	</style>
+</head>
+<body>
+	<div class="main"> 
+		<div class="message">
+			<h2>Please input the desktop notification message:</h2>
+			<textarea name="message" id="info" cols="50" rows="10">hello world</textarea>
+		</div>
+		<div class="button" id="btn"> Show Message</div>
+	</div>
+	<script type="text/javascript">
+			//var btn = document.getElementById('btn');
+			//var message = document.getElementById('info').value;
+			//console.log(message);
+
+			/*var statue;
+			function supported(){
+				if(window.webkitNotifications){
+					return true;
+				} else{
+					return false;
+				}
+			}
+
+			function requestPermission(){
+				if(supported){
+					window.webkitNotifications.requestPermission();
+					statue = window.webkitNotifications.checkPermission();
+					console.log(window.webkitNotifications);
+				}
+			}
+
+			function checkStatue(){
+				switch (statue){
+					case 0:
+						message();
+						break;
+					case 1:
+						requestPermission();
+						break;
+					case 2:
+						return;
+				}
+			}
+
+			function message(){
+				var icon = "../IMAGE/mediaICON/pause.png";
+				var title = "hupeng";
+				var body = "Hello World";
+				var msgObj = window.webkitNotifications.createNotification(icon, title, body);
+				//var msgObj = window.webkitNotifications.createHTMLNotification("HTMLNotification.html");
+				console.log(msgObj);
+				msgObj.dir = "rtl";
+				msgObj.tag = "aa";
+
+				msgObj.onshow = function(){
+					setTimeout(function(){
+						msgObj.close();
+					}, 4000);
+				}
+
+				msgObj.show();
+			}
+			
+			requestPermission();
+			checkStatue();*/
+
+			var options = {
+				url : "../IMAGE/mediaICON/pause.png",
+				title : "hupeng",
+				body : "Hello World!"
+			}
+			var message = new DesktopNotification(1,options,4000);
+			message.init();
+	</script>
+</body>
+</html>
